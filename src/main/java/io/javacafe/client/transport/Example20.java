@@ -13,8 +13,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
-import org.elasticsearch.search.aggregations.metrics.stats.Stats;
-import org.elasticsearch.search.aggregations.metrics.stats.StatsAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.Stats;
+import org.elasticsearch.search.aggregations.metrics.StatsAggregationBuilder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 public class Example20 {

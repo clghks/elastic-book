@@ -11,7 +11,7 @@ import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.bucket.significant.SignificantTerms;
+import org.elasticsearch.search.aggregations.bucket.terms.SignificantTerms;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 public class Example26 {

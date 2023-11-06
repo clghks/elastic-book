@@ -1,15 +1,15 @@
 package io.javacafe.client.transport;
 
-import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
-
 import java.io.IOException;
 import java.net.InetAddress;
 
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
-import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.elasticsearch.xcontent.XContentBuilder;
+
+import static org.elasticsearch.xcontent.XContentFactory.jsonBuilder;
 
 /**
  * 한글 형태소 분석기 추가
@@ -27,12 +27,7 @@ public class Example03 {
     	/**
     	 * 클라이언트 생성
     	 */
-        Settings settings = Settings.builder() .put("cluster.name", "elasticsearch").build();
-
-        TransportClient client =
-                new PreBuiltTransportClient(settings)
-                        .addTransportAddress(new TransportAddress(
-                                InetAddress.getByName("127.0.0.1"), 9300));
+        TransportClient client = ClientTest.createClient();
 
         /**
          * 인덱스 생성
@@ -91,7 +86,7 @@ public class Example03 {
                 .endObject();
         
         // 인덱스 생성
-        client.admin().indices().prepareCreate(INDEX_NAME)
+		ClientTest.createClient().admin().indices().prepareCreate(INDEX_NAME)
                 .setSettings(settingBuilder)
                 .addMapping(TYPE_NAME, indexBuilder)
                 .get();

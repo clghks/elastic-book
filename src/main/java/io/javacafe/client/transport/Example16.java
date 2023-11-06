@@ -11,8 +11,8 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.metrics.sum.Sum;
-import org.elasticsearch.search.aggregations.metrics.sum.SumAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.Sum;
+import org.elasticsearch.search.aggregations.metrics.SumAggregationBuilder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 public class Example16 {

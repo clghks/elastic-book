@@ -10,13 +10,12 @@ import java.util.concurrent.ExecutionException;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.geo.ShapeRelation;
-import org.elasticsearch.common.geo.builders.CoordinatesBuilder;
-import org.elasticsearch.common.geo.builders.MultiPointBuilder;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.index.query.GeoShapeQueryBuilder;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.spatial4j.shape.ShapeFactory;
 
 
 /**
@@ -34,29 +33,26 @@ public class Example36 {
         String INDEX_NAME = "movie_search_datatype";
         String FIELD_NAME = "filmLocation";
 
-        List<Coordinate> coodinates = new CoordinatesBuilder()        
-	        .coordinate(0, 0)
-	        .coordinate(0, 10)
-	        .coordinate(10, 10)
-	        .coordinate(10, 0)
-	        .coordinate(0, 0)
-	        .build();
-        
-        GeoShapeQueryBuilder queryBuilder = geoShapeQuery(
-        		FIELD_NAME,                                      
-                new MultiPointBuilder(coodinates)
-        );
-        
-        queryBuilder.relation(ShapeRelation.WITHIN); 
-        
-        
-        
-        SearchResponse response = client.prepareSearch(INDEX_NAME)
-                .setQuery(queryBuilder)
-                .setSize(30).get();
-
-
-
+//        List<Coordinate> coodinates = new CoordinatesBuilder()
+//	        .coordinate(0, 0)
+//	        .coordinate(0, 10)
+//	        .coordinate(10, 10)
+//	        .coordinate(10, 0)
+//	        .coordinate(0, 0)
+//	        .build();
+//
+//        GeoShapeQueryBuilder queryBuilder = geoShapeQuery(
+//        		FIELD_NAME,
+//                new ShapeFactory.MultiPointBuilder(coodinates)
+//        );
+//
+//        queryBuilder.relation(ShapeRelation.WITHIN);
+//
+//
+//
+//        SearchResponse response = client.prepareSearch(INDEX_NAME)
+//                .setQuery(queryBuilder)
+//                .setSize(30).get();
 
     }
 }

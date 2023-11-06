@@ -1,7 +1,5 @@
 package io.javacafe.client.transport;
 
-import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.concurrent.ExecutionException;
@@ -16,6 +14,8 @@ import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+
+import static org.elasticsearch.xcontent.XContentFactory.jsonBuilder;
 
 /**
  * BulkProcessor 이용하여 문서 추가하기

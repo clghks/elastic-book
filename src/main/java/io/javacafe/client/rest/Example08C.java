@@ -1,7 +1,5 @@
 package io.javacafe.client.rest;
 
-import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
-
 import java.io.IOException;
 import java.util.Date;
 
@@ -13,8 +11,10 @@ import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.rest.RestStatus;
+import org.elasticsearch.xcontent.XContentBuilder;
+
+import static org.elasticsearch.xcontent.XContentFactory.jsonBuilder;
 
 public class Example08C {
     /**

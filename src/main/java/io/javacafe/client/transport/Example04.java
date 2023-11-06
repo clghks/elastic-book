@@ -1,7 +1,5 @@
 package io.javacafe.client.transport;
 
-import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
-
 import java.io.IOException;
 import java.net.InetAddress;
 
@@ -10,6 +8,8 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+
+import static org.elasticsearch.xcontent.XContentFactory.jsonBuilder;
 
 /**
  * 하나의 문서 추가
